@@ -249,6 +249,9 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/ux-toggle-password": {
+        "version": "v2.23.0"
+    },
     "symfony/ux-turbo": {
         "version": "2.23",
         "recipe": {

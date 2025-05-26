@@ -16,16 +16,22 @@ final class RegisterController extends AbstractController
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
+        //creation du formulaire
         $registerForm = $this->createForm(RegisterUserType::class, $user);
-        // On écoute la request de l'utilisateur
+        // On écoute la requete de l'utilisateur
         $registerForm->handleRequest($request);
 
         //si le formulaire est soumis et qu'il est valide
         if ($registerForm->isSubmitted() && $registerForm->isValid()) {
            /* dd($registerForm->getData());/**/
             // tu enregistre en BDD
-            $entityManager->persist($user);
+            $entityManager->persist($user);//obligatoire lors d'une création
             $entityManager->flush();
+            $this->addFlash(
+                'success',
+                'Votre compte est correctement créé, veuillez vous connecter'
+            );
+            return $this->redirectToRoute('app_login');
         }
 
         // tu envoies un message de confirmation de compte bien créé

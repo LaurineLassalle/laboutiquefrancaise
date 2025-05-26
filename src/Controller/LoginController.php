@@ -23,7 +23,7 @@ final class LoginController extends AbstractController
         ]);
     }
 
-    #[Route('/logout', name: 'app_logout', methods: ['GET'])]
+    #[Route('/deconnexion', name: 'app_logout', methods: ['GET'])]
     public function logout(): never
     {
        throw new \Exception('Dont');

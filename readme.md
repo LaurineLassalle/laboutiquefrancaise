@@ -1,7 +1,7 @@
 # Getting Started
 Run the project:
 ### `symfony serve`
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:8000](http://localhost:8000) to view it in your browser.
 
 ## Available Scripts
 Runs PHPUnit tests:
